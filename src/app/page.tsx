@@ -1,6 +1,6 @@
 import Image from "next/image";
 import panImg from "public/images.jpeg"
-import logoImg from "public/logo.png"
+
 
 export default function Home() {
   return (
