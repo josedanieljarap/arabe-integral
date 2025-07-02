@@ -1,15 +1,30 @@
 import Image from "next/image";
 import panImg from "public/images.jpeg"
+import logoImg from "public/minilogo.png.webp"
 
 
 export default function Home() {
   return (
     <main className="bg-amber-100 text-gray-800">
 
+      {/* Header */}
+      <header className="bg-black">
+        <div className="flex items-center pl-3 md:pl-4 py-2 md:py-4 gap-2">
+          <Image 
+            src={logoImg}
+            alt="pan icon"
+            width={32}
+            className="md:w-10"
+          />
+          <h1 className="text-white text-lg md:text-xl font-semibold">Panadería Moisés</h1>
+        </div>
+      </header>
+
+
 
 
       {/* Hero Section */}
-      <section className="text-center py-14 px-5">
+      <section className="text-center py-12 px-5">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Pan Integral Artesanal</h1>
         <p className="text-xl md:text-2xl mb-6">
           Natural, saludable y <span className="text-yellow-700 font-semibold">sin manteca</span>.
