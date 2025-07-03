@@ -1,7 +1,8 @@
 import Image from "next/image";
-import panImg from "public/images.jpeg"
+import panImg from "public/pan-arabe.jpeg"
 import logoImg from "public/minilogo.png.webp"
 import phoneImg from "public/phone-icon.png"
+import cartImg from "public/cart.png"
 
 export default function Home() {
   return (
@@ -9,25 +10,45 @@ export default function Home() {
 
       {/* Header */}
       <header className="bg-black flex items-center justify-between px-4 py-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 cursor-pointer">
           <Image 
             src={logoImg}
             alt="pan icon"
-            width={32}
-            className="md:w-10"
+            width={28}
+            className="md:w-7"
           />
-          <h1 className="text-white text-lg md:text-xl font-semibold">Panadería Moisés</h1>
+          <h1 className="text-white text-md md:text-md font-semibold">Panadería Moisés</h1>
         </div>
 
-        <div className="flex items-center gap-1">
-          <Image 
-            src={phoneImg}
-            alt="phone icon"
-            width={28}
-            className="md:w-8"
-          />
-          <h2 className="text-white text-lg md:text-xl font-semibold">Contáctanos</h2>
+        {/* Navbar for desktop */}
+        <nav className="hidden md:flex md:gap-5">
+          <div className="flex gap-1 cursor-pointer">
+            <Image 
+              src={phoneImg}
+              alt="phone icon"
+              width={23}
+            />
+            <h2 className="text-white text-md font-semibold">Contáctanos</h2>
+          </div>
+          <div className="flex gap-1 cursor-pointer">
+            <Image
+              src={cartImg}
+              alt="cart icon"
+              width={23}
+            />
+            <h2 className="text-white text-md font-semibold">Carrito</h2>
+          </div>
+        </nav>
+
+        {/* Navbar for mobile */}
+        <div className="md:hidden cursor-pointer">
+          <div className="h-1 w-6 rounded-full bg-zinc-200"></div>
+          <div className="h-1 w-6 rounded-full bg-zinc-200 mt-1"></div>
+          <div className="h-1 w-6 rounded-full bg-zinc-200 mt-1"></div>
         </div>
+        
+
+
       </header>
 
 
@@ -44,7 +65,7 @@ export default function Home() {
           alt="Pan integral sin manteca"
           className="mx-auto rounded-2xl shadow-lg w-full max-w-md"
         />
-        <button className="mt-6 px-6 py-3 bg-yellow-700 text-white rounded-xl hover:bg-yellow-800">
+        <button className="mt-6 px-6 py-3 bg-yellow-700 text-white rounded-xl hover:bg-yellow-800 active:bg-yellow-800 cursor-pointer">
           ¡Quiero probarlo!
         </button>
       </section>
