@@ -1,15 +1,15 @@
 import Image from "next/image";
 import panImg from "public/images.jpeg"
 import logoImg from "public/minilogo.png.webp"
-
+import phoneImg from "public/phone-icon.png"
 
 export default function Home() {
   return (
     <main className="bg-amber-100 text-gray-800">
 
       {/* Header */}
-      <header className="bg-black">
-        <div className="flex items-center pl-3 md:pl-4 py-2 md:py-4 gap-2">
+      <header className="bg-black flex items-center justify-between px-4 py-2">
+        <div className="flex items-center gap-2">
           <Image 
             src={logoImg}
             alt="pan icon"
@@ -17,6 +17,16 @@ export default function Home() {
             className="md:w-10"
           />
           <h1 className="text-white text-lg md:text-xl font-semibold">Panadería Moisés</h1>
+        </div>
+
+        <div className="flex items-center gap-1">
+          <Image 
+            src={phoneImg}
+            alt="phone icon"
+            width={28}
+            className="md:w-8"
+          />
+          <h2 className="text-white text-lg md:text-xl font-semibold">Contáctanos</h2>
         </div>
       </header>
 
