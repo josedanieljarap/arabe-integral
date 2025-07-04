@@ -1,12 +1,19 @@
+'use client'
+
 import Image from "next/image";
 import panImg from "public/pan-arabe.jpeg"
 import logoImg from "public/minilogo.png.webp"
 import phoneImg from "public/phone-icon.png"
 import cartImg from "public/cart.png"
+import { quicksand } from "utils/fonts"
+
+import { useState } from 'react'
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <main className="bg-amber-100 text-gray-800">
+    <main className={`bg-amber-100 text-gray-800 ${quicksand.className}`}>
 
       {/* Header */}
       <header className="bg-black flex items-center justify-between px-4 py-2">
@@ -41,11 +48,51 @@ export default function Home() {
         </nav>
 
         {/* Navbar for mobile */}
-        <div className="md:hidden cursor-pointer">
-          <div className="h-1 w-6 rounded-full bg-zinc-200"></div>
-          <div className="h-1 w-6 rounded-full bg-zinc-200 mt-1"></div>
-          <div className="h-1 w-6 rounded-full bg-zinc-200 mt-1"></div>
+        <div
+          className="md:hidden cursor-pointer w-6 h-6 relative"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {/* Línea 1 */}
+          <span
+            className={`absolute h-1 w-6 bg-zinc-200 rounded-full transition-transform duration-300 ease-in-out 
+            ${isOpen ? 'rotate-45 top-2.5' : 'top-0'}`}
+          />
+          {/* Línea 2 */}
+          <span
+            className={`absolute h-1 w-6 bg-zinc-200 rounded-full transition-all duration-300 ease-in-out 
+            ${isOpen ? 'opacity-0' : 'top-2.5'}`}
+          />
+          {/* Línea 3 */}
+          <span
+            className={`absolute h-1 w-6 bg-zinc-200 rounded-full transition-transform duration-300 ease-in-out 
+            ${isOpen ? '-rotate-45 bottom-2.5' : 'bottom-0'}`}
+          />
         </div>
+
+        {isOpen && (
+          <ul className="md:hidden absolute top-10 right-0 w-50 bg-zinc-900 text-white">
+            <li className="relative flex items-center justify-center cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
+              <div className="flex gap-1 cursor-pointer">
+                <Image 
+                  src={phoneImg}
+                  alt="phone icon"
+                  width={23}
+                />
+                <h2 className="text-white text-md font-semibold">Contáctanos</h2>
+              </div>
+            </li>
+            <li className="relative flex items-center justify-center cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
+              <div className="flex gap-1 cursor-pointer">
+                <Image
+                  src={cartImg}
+                  alt="cart icon"
+                  width={23}
+                />
+                <h2 className="text-white text-md font-semibold">Carrito</h2>
+              </div>
+            </li>
+          </ul>
+        )}
         
 
 
