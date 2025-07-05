@@ -51,7 +51,7 @@ export default function Home() {
 
         {/* Mobile navbar icon */}
         <div
-          className="md:hidden cursor-pointer p-4"
+          className="md:hidden cursor-pointer pr-4"
           onClick={() => setIsOpen(!isOpen)}
         >
           {/* Línea 1 */}
