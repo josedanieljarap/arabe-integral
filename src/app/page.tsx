@@ -29,7 +29,7 @@ export default function Home() {
 
         {/* Navbar for desktop */}
         <nav className="hidden md:flex h-11">
-          <div className="flex gap-1 cursor-pointer hover:bg-zinc-800 px-4 py-2">
+          <div className="flex gap-1 cursor-pointer hover:bg-zinc-800 active:bg-zinc-800 px-4 py-2">
             <Image 
               src={phoneImg}
               alt="phone icon"
@@ -38,7 +38,7 @@ export default function Home() {
             />
             <h2 className="text-white text-md font-semibold">Contáctanos</h2>
           </div>
-          <div className="flex gap-1 cursor-pointer hover:bg-zinc-800 px-4 py-2">
+          <div className="flex gap-1 cursor-pointer hover:bg-zinc-800 active:bg-zinc-800 px-4 py-2">
             <Image
               src={cartImg}
               alt="cart icon"
