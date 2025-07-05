@@ -73,26 +73,22 @@ export default function Home() {
         
         {/* mobile navbar */}
         {isOpen && (
-          <ul className="md:hidden absolute top-13 right-0 w-50 bg-zinc-900 text-white z-10">
-            <li className="relative flex items-center justify-center cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
-              <div className="flex gap-1 cursor-pointer">
-                <Image 
-                  src={phoneImg}
-                  alt="phone icon"
-                  width={23}
-                />
-                <h2 className="text-white text-md font-semibold">Contáctanos</h2>
-              </div>
+          <ul className="md:hidden absolute top-11 right-0 w-50 bg-black text-white z-10">
+            <li className="flex justify-center gap-1 cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
+              <Image 
+                src={phoneImg}
+                alt="phone icon"
+                width={23}
+              />
+              <h2 className="text-white text-md font-semibold">Contáctanos</h2>
             </li>
-            <li className="relative flex items-center justify-center cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
-              <div className="flex gap-1 cursor-pointer">
-                <Image
-                  src={cartImg}
-                  alt="cart icon"
-                  width={23}
-                />
-                <h2 className="text-white text-md font-semibold">Carrito</h2>
-              </div>
+            <li className="flex justify-center gap-1 cursor-pointer p-4 font-semibold hover:bg-zinc-800 active:bg-zinc-800">
+              <Image
+                src={cartImg}
+                alt="cart icon"
+                width={23}
+              />
+              <h2 className="text-white text-md font-semibold">Carrito</h2>
             </li>
           </ul>
         )}
