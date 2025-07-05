@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import panImg from "public/pan-arabe.jpeg"
+{/* import panImg from "public/pan-arabe.jpeg" */}
 import logoImg from "public/minilogo.png.webp"
 import phoneImg from "public/phone-icon.png"
 import cartImg from "public/cart.png"
